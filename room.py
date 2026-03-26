@@ -1,29 +1,23 @@
-class Event:
+from record import Record
 
-    def __init__(self, title, date, start_time, end_time, department, event_type):
-        self.title = title
-        self.date = date
-        self.start_time = start_time
-        self.end_time = end_time
-        self.department = department
-        self.event_type = event_type
+class Room(Record):
 
-    def validate_event(self):
-        if self.title == "":
-            print("Invalid event title")
+    def __init__(self, room_id, capacity, features):
+        super().__init__()   # Call Record constructor
+
+        self.room_id = room_id
+        self.capacity = capacity
+        self.features = features
+
+    def validate_room(self):
+        if self.capacity <= 0:
+            print("Invalid capacity")
             return False
-
-        if self.start_time >= self.end_time:
-            print("Invalid time: Start time must be before end time")
-            return False
-
         return True
 
-    def display_event(self):
-        print("\nEvent Details")
-        print("Title:", self.title)
-        print("Date:", self.date)
-        print("Start Time:", self.start_time)
-        print("End Time:", self.end_time)
-        print("Department:", self.department)
-        print("Event Type:", self.event_type)
+    def display_room(self):
+        print("\n--- Room Details ---")
+        print("Room ID:", self.room_id)
+        print("Capacity:", self.capacity)
+        print("Features:", self.features)
+        print("Created At:", self.timestamp)
