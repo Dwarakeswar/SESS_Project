@@ -1,0 +1,15 @@
+print("Enter Event Details")
+
+event_name = input("Event Name: ")
+event_date = input("Event Date (YYYY-MM-DD): ")
+start_time = input("Start Time (HH:MM): ")
+end_time = input("End Time (HH:MM): ")
+department = input("Department: ")
+event_type = input("Event Type: ")
+
+print("\nEvent Details")
+print("Event Name:", event_name)
+print("Date:", event_date)
+print("Time:", start_time, "-", end_time)
+print("Department:", department)
+print("Event Type:", event_type)
