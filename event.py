@@ -1,6 +1,10 @@
-class Event:
+from record import Record
+
+class Event(Record):
 
     def __init__(self, title, date, start_time, end_time, department, event_type):
+        super().__init__()   # Call Record constructor
+
         self.title = title
         self.date = date
         self.start_time = start_time
@@ -20,10 +24,11 @@ class Event:
         return True
 
     def display_event(self):
-        print("\nEvent Details")
+        print("\n--- Event Details ---")
         print("Title:", self.title)
         print("Date:", self.date)
         print("Start Time:", self.start_time)
         print("End Time:", self.end_time)
         print("Department:", self.department)
         print("Event Type:", self.event_type)
+        print("Created At:", self.timestamp)
